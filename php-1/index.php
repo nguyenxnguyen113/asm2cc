@@ -19,375 +19,236 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-    *{
-	-webkit-box-sizing: border-box;
-  	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
 }
-
-.cf{
-	zoom:1
+body {
+    font: 14px/18px'OpenSans-Bold', sans-serif;    
 }
-
-.cf:before,.cf:after{
-	content:"";
-	display:table
+ul {
+    list-style: none;
 }
-
-.cf:after{
-	clear:both
+.wrapper {
+    width: 700px;
+    margin: 20px auto;
 }
-
-.fl-l{
-	float:left
+/* products */
+ .products {
+    margin: 40px 0;
+    overflow: hidden;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
 }
-
-.fl-r{
-	float:right
+.products ul li p {
+    display: none;
 }
-
-a{
-	-webkit-transition:all 0.3s ease;
-	-moz-transition:all 0.3s ease;
-	-o-transition:all 0.3s ease;
-	transition:all 0.3s ease;
+.products ul.list li p {
+    display: block;
 }
-
-html, body{
-	background-color:#F2F2F2;
-	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	margin:0;
-	padding:0;
-	height:100%;
-	width:100%;
-	text-align:center;
-	color:#404040;
-	position:relative;
+.products .list li {
+    float: none;
+    display: block;
+    width: 691px;
+    height: 245px;
 }
-
-.wrapper{
-	list-style:none;
-	margin:0;
-	padding:0;
-	width:790px;
-	margin:30px auto 0;
-	text-align:left;
+.products .list li .titlePro {
+    float: left;
+    position: relative;
+    padding: 45px 0 20px 0;
+    width: auto;
+    height: auto;
+    border: 0;
+    background: transparent;
 }
-
-.product{
-	width:250px;
-	margin-right:20px;
-	background-color:#FFFFFF;
-	position:relative;
+.products .list li:hover .titlePro {
+    border: 0;
 }
-
-.product:last-of-type{
-	margin-right:0;
+.products .list li .titlePro a {
+    padding: 0 0 5px 0;
 }
-
-.container-prod{
-	height:350px;
-	overflow:hidden;
-	position:relative;
-	-moz-box-shadow: 0px 0px 0px 0px #F2F2F2;
-	-webkit-box-shadow:  0px 0px 0px 0px #F2F2F2;
-	box-shadow: 0px 0px 0px 0px #F2F2F2;
-	-webkit-transition:all 0.3s ease;
-	-moz-transition:all 0.3s ease;
-	-o-transition:all 0.3s ease;
-	transition:all 0.3s ease;
+.products .list li .titlePro .descTitle {
+    color: #333;
+    text-transform: none !important;
+    padding: 10px 0 0 0;
 }
-
-.container-prod:hover, .container-prod.information, .container-prod.social-sharing{
-	-moz-box-shadow: 0px 0px 5px 0px #333;
-	-webkit-box-shadow:  0px 0px 5px 0px #333;
-	box-shadow: 0px 0px 5px 0px #333;
+.products .list li .titlePro p {
+    color: #333;
+    text-transform: none !important;
+    width: 440px;
 }
-
-.image{
-	height:270px;
-	background-position:center;
-	background-size:cover;
-	background-repeat:no-repeat;
-	-webkit-transition:all 1s ease;
-	-moz-transition:all 1s ease;
-	-o-transition:all 1s ease;
-	transition:all 1s ease;
+.products .list li .wrapimg {
+    height: 243px;
+    float: left;
+    border-right: 1px solid #d9d9d9;
+    margin: 0 13px 0 0;
+    width: 230px;
+    position: relative;
 }
-
-.information .image{
-	height:150px;
+.products .list li .wrapimg img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
-
-.container-information{
-	height:40px;
-	overflow:hidden;
-	-webkit-transition:all 1s ease;
-	-moz-transition:all 1s ease;
-	-o-transition:all 1s ease;
-	transition:all 1s ease;
-	background-color:#031E16;
-	color:#FFFFFF;
+.products .list li .addPro {
+    height: 243px;
+    border-bottom: 1px solid rgba(51, 51, 51, 1);
 }
-
-.information .container-information{
-	height:160px;
+.products .list li .addPro a {
+    margin: 45% auto auto 40px;
 }
-
-.container-information .title{
-	height:40px;
-	line-height:40px;
-	padding:0 10px;
-	background-color:#5DBA9D;
-	color:#FFFFFF;
-	font-size:20px;
-	font-weight:bold;
-	position:relative;
+.products.catalog {
+    margin: 80px auto 40px auto;
 }
-
-.close{
-	width:40px;
-	height:40px;
-	text-align:center;
-	line-height:40px;
-	background-color:#11956c;
-	position:absolute;
-	right:-40px;
-	-webkit-transition:all 1s ease;
-	-moz-transition:all 1s ease;
-	-o-transition:all 1s ease;
-	transition:all 1s ease;
-	color:#FFFFFF;
+.products.category {
+    margin: 10px 0;
+    width: 693px;
+    float: left;
 }
-
-.information .close{
-	right:0;
+.products ul li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 230px;
+    height: 244px;
+    position: relative;
+    border-top: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
 }
-
-.container-information .description{
-	padding:10px;
-	height:120px;
-	overflow-x:hidden;
-	overflow-y:auto;
+.products ul li img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
-
-.sharing{
-	text-align:center;
-	width:100%;
-	position:absolute;
-	bottom:-50px;
-	overflow:hidden;
-	-webkit-transition:all 1s ease;
-	-moz-transition:all 1s ease;
-	-o-transition:all 1s ease;
-	transition:all 1s ease;
-	background-color:#031E16;
-	z-index:1;
+.products ul li:hover .addPro, .products ul li:hover .addPro a {
+    opacity: 1;
 }
-
-.social-sharing .sharing{
-	bottom:40px;
+.products ul li:hover .titlePro {
+    border: 1px solid rgba(51, 51, 51, 1);
+    border-top: 0;
 }
-
-.sharing a{
-	color:#FFFFFF;
-	font-size:20px;
-	width:25%;
-	height:40px;
-	line-height:40px;
+.products ul li:hover .titlePro a {
+    color: #010101;
 }
-
-.sharing a:hover{
-	color:#5DBA9D;
+.addPro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 228px;
+    height: 186px;
+    border: 1px solid rgba(51, 51, 51, 1);
+    border-bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    -webkit-transition: opacity 0s;
+    -moz-transition: opacity 0s;
+    -o-transition: opacity 0s;
 }
-
-
-.buttons{
-	position:relative;
-	z-index:2;
+.addPro a {
+    text-decoration: none;
+    display: inline-block;
+    width: 157px;
+    height: 40px;
+    margin: 100px auto auto 40px;
+    background-color: #333;
+    text-align: center;
+    font: 14px/40px'OpenSans-Italic', sans-serif;
+    color: #fff;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
 }
-
-.buttons a{
-	text-align:center;
-	width:25%;
-	height:40px;
-	line-height:40px;
-	background-color:#11956c;
-	color:#FFFFFF;
-	text-decoration:none;
-	position:relative;
-	overflow:hidden;
+.titlePro {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 208px;
+    height: 36px;
+    border: 1px solid rgba(51, 51, 51, 0);
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    border-top: 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
 }
-
-.buttons a > span > span{
-	position:relative;
-	z-index:3;
-	display:block;
-	width:100%;
+.titlePro p, .titlePro span, .titlePro a {
+    text-transform: uppercase;
 }
-
-.buttons a > span:before{
-	content:"";
-	background-color:rgba(0,0,0,0);
-	width:100%;
-	height:40px;
-	position:absolute;
-	top:40px;
-	left:0;
-	z-index:1;
-	-webkit-transition:all 0.3s ease;
-	-moz-transition:all 0.3s ease;
-	-o-transition:all 0.3s ease;
-	transition:all 0.3s ease;
+.titlePro a {
+    color: #003f75;
+    text-decoration: none;
+    display: block;
 }
-
-.buttons a:hover > span:before, .information .buttons a.more > span:before , .social-sharing .buttons a.share > span:before{
-	top:0;
-	background-color:rgba(0,0,0,0.5);
+.titlePro span {
+    color: #a20000;
 }
-
-.information .buttons a.more > span:before , .social-sharing .buttons a.share > span:before{
-	top:0;
-	background-color:rgba(0,0,0,0.8);
+.view p  { top: 5px; margin: 0 10px 0 0; } 
+.view p,
+.view a { 
+    float: left; 
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
 }
-
-.buttons a.cart.added > span:before{
-	top:0;
-	background-color:rgba(255,255,255,0.8);
+.icon-grid {
+    background: url("http://cdn1.iconfinder.com/data/icons/jigsoar-icons/16/_thumbnail.png") no-repeat 0 0;
+    height: 16px;
+    width: 16px;
+    top: 7px;
 }
-
-.buttons a.cart > span > span.check{
-	width:100%;
-	height:40px;
-	position:absolute;
-	top:40px;
-	left:0;
-	-webkit-transition:all 0.3s ease;
-	-moz-transition:all 0.3s ease;
-	-o-transition:all 0.3s ease;
-	transition:all 0.3s ease;
-}
-
-.buttons a.cart.added > span > span.check{
-	top:0;
-	color:#11956c;
-}
-
-.buttons a.cart > span > span.add{
-	width:100%;
-	height:40px;
-	position:absolute;
-	top:0;
-	left:0;
-	-webkit-transition:all 0.3s ease;
-	-moz-transition:all 0.3s ease;
-	-o-transition:all 0.3s ease;
-	transition:all 0.3s ease;
-}
-
-.buttons a.cart.added > span > span.add{
-	top:-40px;
-}
-
-.buttons a i{
-	font-size:20px;
-}
-
-.buttons a:first-of-type{
-	width:50%;
+.icon-list {
+    background: url("http://cdn3.iconfinder.com/data/icons/other-icons/48/list-32.png") no-repeat 0 0;
+    height: 32px;
+    width: 32px;
 }
     </style>
     <title>Product</title>
 </head>
 <body>
-                   
-                    <?php foreach ($results as $key => $result) : ?>
-                    <ul class="wrapper cf">
-	<li class="product fl-l">
-    	<div class="container-prod">
-        	<div class="image" style="background-image:url('http://www.behoodclothing.com/wp-content/uploads/2012/07/Splatter.jpg');"></div>
-            <div class="container-information">
-            	<div class="title">
-                    <?= $result['name'] ?>
-                    <a href="javascript:void(0)" class="more close"><i class="fa fa-times"></i></a>                
+<?php foreach ($results as $key => $result) : ?>
+    <div class="wrapper">
+    <div class="view">
+        <p>View as:</p> 
+        <a href="#" class="icon-grid"></a>
+        <a href="#" class="icon-list"></a>
+        
+    </div>
+    
+    <div class="products category">
+        <ul class="">
+            <li>
+                <div class="wrapimg">
+                    <img src="<?= $result['image'] ?>">
+                    <div class="addPro"> <a href="javascript:;">+ Add to shopping cart</a> 
+                    </div>
                 </div>
-                <div class="description"><br>100% cotton<br>Color available: white on gray<br>Size available: L, XL</div>
-            </div>
-            <div class="sharing cf">
-            	<a href="https://www.facebook.com/sharer/sharer.php?u=https://codepen.io/mattiabericchia/pen/myQNEV" class="fl-l" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/home?status=Example%20of%20UI%20for%20a%20product%20list%20made%20with%20jQuery%20and%20css%20tricks%20%40mattiabericchia%20https://codepen.io/mattiabericchia/pen/myQNEV" class="fl-l" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://plus.google.com/share?url=https://codepen.io/mattiabericchia/pen/myQNEV" class="fl-l" target="_blank"><i class="fa fa-google-plus"></i></a>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://codepen.io/mattiabericchia/pen/myQNEV&title=UI%20Product%20list&summary=Example%20of%20UI%20for%20a%20product%20list%20made%20with%20jQuery%20and%20css%20tricks&source=https://www.linkedin.com/in/mattiabericchia" class="fl-l" target="_blank"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div class="buttons cf">
-            	<a href="javascript:void(0)" class="cart fl-l">
-                	<span>
-                    	<span class="add"><?= $result['price'] ?></span>
-                        <span class="check"><i class="fa fa-check"></i></span>
-                   	</span>
-                </a>
-            	<a href="javascript:void(0)" class="more fl-l"><span><span><i class="fa fa-plus"></i></span></span></a>
-            	<a href="javascript:void(0)" class="share fl-l"><span><span><i class="fa fa-share-alt"></span></i></span></a>
-            </div>
-        </div>
-	</li>
+                <div class="titlePro">  <a href="javascript:;"><?= $result['name'] ?></a>
+ <span>$result['price'] ?></span>
 
-</ul>
+                    <p class="descTitle">Detailed item information</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </li>
+            
+ <li>
+
+</div>
 <?php endforeach; ?>
 <script>
-(function($) {
-  $(".wrapper .more").click(function(show) {
-    var showMe = $(this)
-      .closest(".product")
-      .find(".container-prod");
-    $(this)
-      .closest(".wrapper")
-      .find(".container-prod")
-      .not(showMe)
-      .removeClass("information");
-    $(".container-prod").removeClass("social-sharing");
-    showMe
-      .stop(false, true)
-      .toggleClass("information")
-      .removeClass("social-sharing");
-    show.preventDefault();
-  });
-
-  $(".wrapper .share").click(function(share) {
-    var showMe = $(this)
-      .closest(".product")
-      .find(".container-prod");
-    $(this)
-      .closest(".wrapper")
-      .find(".container-prod")
-      .not(showMe)
-      .removeClass("social-sharing");
-    $(".container-prod").removeClass("information");
-    showMe
-      .stop(false, true)
-      .toggleClass("social-sharing")
-      .removeClass("information");
-    share.preventDefault();
-  });
-
-  $(".wrapper .add").click(function(share) {
-    var showMe = $(this)
-      .closest(".product")
-      .find(".cart");
-    showMe.stop(false, true).addClass("added");
-    var showMe = $(this)
-      .closest(".product")
-      .find(".container-prod");
-    showMe
-      .stop(false, true)
-      .removeClass("social-sharing")
-      .removeClass("information");
-    share.preventDefault();
-  });
-})(jQuery);
-
+$(".view a").on('click', function(){
+    $('.products ul').toggleClass('list');
+    return false;
+});
 
 </script>
 </body>
