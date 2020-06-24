@@ -228,12 +228,12 @@ ul {
             <?php foreach ($results as $key => $result) : ?>
             <li>
                 <div class="wrapimg">
-                    <img src="https://www.comparison.com.au/system/image_library/22181/Samsung_EC-ST500.jpg">
+                    <img src="<?= $result['image'] ?>">
                     <div class="addPro"> <a href="javascript:;">+ Add to shopping cart</a>
                     </div>
                 </div>
-                <div class="titlePro"> <a href="javascript:;">Samsung EC ST500</a>
-                    <span>$ 145.00</span>
+                <div class="titlePro"> <a href="javascript:;"><?= $result['name'] ?></a>
+                    <span><?= $result['price'] ?></span>
 
                     <p class="descTitle">Detailed item information</p>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
